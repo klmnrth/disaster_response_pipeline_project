@@ -11,10 +11,11 @@ The Project is splitted into the following parts:
 
 ## Getting Started
 ### Dependencies
- - asdasd
- - asdasd
- - asdasd
- - asdasdsad
+ - Python 3.5+ (I used Python 3.8.10)
+ - Machine Learning Libraries: NumPy, SciPy, Pandas, Sciki-Learn
+ - Natural Language Process Libraries: NLTK
+ - SQLlite Database Libraries: SQLalchemy
+ - Web App and Data Visualization: Flask, Plotly
 
 
 ### Installation
