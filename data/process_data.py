@@ -1,4 +1,5 @@
 import sys
+import numpy as np
 import pandas as pd
 from sqlalchemy import create_engine
 
@@ -37,7 +38,7 @@ def clean_data(df):
         categories[column] = categories[column].str[-1]
     
     # convert column from string to numeric
-        categories[column] = categories[column].astype(str)
+        categories[column] = categories[column].astype(np.int)
 
     # drop the original categories column from `df`
     df.drop(columns='categories', inplace=True)
