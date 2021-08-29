@@ -1,3 +1,2 @@
-
 models/classifier.pkl
-data/DisasterRespone.db
+data/DisasterResponse.db
