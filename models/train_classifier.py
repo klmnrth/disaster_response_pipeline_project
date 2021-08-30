@@ -26,12 +26,22 @@ from sklearn.svm import SVC
 
 import pickle
 
-# load data from database
+
 def load_data(database_filepath):
+    """
+    Load Data
+
+    This funtion is loading the data from the database file (.db) and is defining feature and target variables X and Y
+
+    Args: Filepath to database file (.db)
+    """
+    
+    #Load data from database
+    
     engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql_table('df_table', engine)
 
-#Define feature and target variables X and Y
+    #Define feature and target variables X and Y
     X = df['message'].values
     y = df[df.columns[4:]].values
     category_names = df.columns[4:]
@@ -40,6 +50,19 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    """
+    Tokenize function
+
+    This function is tokenizing the provided text. The following steps are processed:
+        - Normalize text
+        - Tokenize text
+        - Remove stopwords
+        - Lemmatize
+
+
+    Args:   Text
+    Output: Tokenized text
+    """
     #Normalize text
     text = re.sub(r"[^a-zA-Z0-9]", " ", text).lower()
     
@@ -60,6 +83,13 @@ def tokenize(text):
 
 
 def build_model():
+    """
+    Build Model
+
+    This function is initiating the pipeline which is building the model.
+    Output: ML model
+    """
+
     # build pipeline
     model = Pipeline([
     ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -71,6 +101,16 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    Evaluate model
+
+    This function is evaluating the model by predicting on test data and printing the classification report.
+
+    Args:   ML model
+            X_test (features)
+            y_test (labels)
+            category_names (label names)
+    """
     y_pred = model.predict(X_test)
 
     for c in range(0, len(category_names)):
@@ -79,11 +119,29 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """
+    Save model
+
+    This function is saving the trained ML model to the provided destination path as a pickle file (.pkl).
+
+    Args:   ML model 
+            model_filepath (destination path)
+    """
     # save the model to disk
     pickle.dump(model, open(model_filepath, 'wb'))
 
 
 def main():
+    """
+    Main Function
+
+    This is the Main Function which is processing the steps of the ML pipeline.
+        - Load Data from database file (.db)
+        - Build the pipeline / the model
+        - Train the model
+        - Evaluate the model
+        - Saves the model as a pickle file (.pkl)
+    """
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))

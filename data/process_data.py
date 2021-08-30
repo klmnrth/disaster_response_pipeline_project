@@ -81,7 +81,7 @@ def main():
     """
     Main Function
 
-    This is the Main Function which is processing the steps if ETL pipeline.
+    This is the Main Function which is processing the steps of the ETL pipeline.
         - Load Data
         - Clean and preprocess Data
         - Export Data to SQLite database file

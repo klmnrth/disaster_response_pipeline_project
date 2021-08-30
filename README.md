@@ -21,7 +21,7 @@ The Project is splitted into the following parts:
 ### Installation
 Clone this Git Repository.
 
-git clone 
+'git clone https://github.com/klmnrth/disaster_response_pipeline_project'
 
 ### Execute the program
 
@@ -36,3 +36,7 @@ git clone
     `python run.py`
 
 3. Go to http://0.0.0.0:3001/
+
+## Additional notebooks
+### ETL Pipeline Preparation
+In the model 
