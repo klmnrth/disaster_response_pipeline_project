@@ -75,7 +75,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
     for c in range(0, len(category_names)):
         print(category_names[c] + ":")
-        print(classification_report(Y_test[:,c], y_pred[:,c], zero_division=0))
+        print(classification_report(Y_test[:,c], y_pred[:,c], zero_division = 0))
 
 
 def save_model(model, model_filepath):
