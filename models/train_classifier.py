@@ -94,7 +94,7 @@ def build_model():
     model = Pipeline([
     ('vect', CountVectorizer(tokenizer=tokenize)),
     ('tfidf', TfidfTransformer()),
-    ('clf', MultiOutputClassifier(RandomForestClassifier(n_jobs = -5)))
+    ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
 
     return model
