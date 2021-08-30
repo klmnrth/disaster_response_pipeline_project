@@ -5,7 +5,12 @@ from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
     """
-    Arguments:
+    Load Data
+
+    Args:   Filepath to messages csv file
+            Filepath to categories csv file
+
+    Output: Pandas DataFrame (df) which contains merged csv files
     ....
     """
     messages = pd.read_csv(messages_filepath)
@@ -18,7 +23,10 @@ def load_data(messages_filepath, categories_filepath):
 
 def clean_data(df):
     """
-    ......
+    Clean Data
+
+    Args:   Raw DataFrame (df)
+    Output: Cleaned DataFranme (df)
     """
     # create a dataframe of the 36 individual category columns
     categories = df['categories'].str.split(pat=';', expand=True)
@@ -59,11 +67,26 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
+    """
+    Save Data
+
+    Args:   Cleaned DataFrame (df), 
+            Destination path for saving the database (.db)
+    """
     engine = create_engine('sqlite:///'+database_filename)
     df.to_sql('df_table', engine, index=False)
 
 
 def main():
+    """
+    Main Function
+
+    This is the Main Function which is processing the steps if ETL pipeline.
+        - Load Data
+        - Clean and preprocess Data
+        - Export Data to SQLite database file
+    """
+
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
