@@ -21,7 +21,7 @@ The Project is splitted into the following parts:
 ### Installation
 Clone this Git Repository.
 
-'git clone https://github.com/klmnrth/disaster_response_pipeline_project'
+`git clone https://github.com/klmnrth/disaster_response_pipeline_project`
 
 ### Execute the program
 
