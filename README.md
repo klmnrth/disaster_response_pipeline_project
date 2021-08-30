@@ -43,3 +43,9 @@ In the data folder you can find the ETL Pipeline Perparation Jupyter Notebook wh
 ### ML Pipeline Preparation
 In the models folder you can find the ML Pipeline Perparation Jupyter Notebook which is basically the foundation of the train_classifier.py script.
 This notebook can be used to improve your model by trying other Machine Learning algorithms or by tuning the models parameter with GridSearchCV.
+
+##Screenshots
+
+![image](https://user-images.githubusercontent.com/89395929/131359735-66182de4-069d-4805-9516-90ab4bd151aa.png)
+
+![image](https://user-images.githubusercontent.com/89395929/131359807-edc2b623-1f17-43d6-a751-8beb1b9380af.png)
