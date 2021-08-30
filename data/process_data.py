@@ -40,7 +40,7 @@ def clean_data(df):
     category_colnames = []
     for x in row:
         category_colnames.append(x[0:-2])
-    print(category_colnames)
+
 
     # rename the columns of `categories`
     categories.columns = category_colnames
@@ -51,7 +51,7 @@ def clean_data(df):
         categories[column] = categories[column].str[-1]
     
     # convert column from string to numeric
-        categories[column] = categories[column].astype(np.int)
+        categories[column] = categories[column].astype(np.int64)
 
     # drop the original categories column from `df`
     df.drop(columns='categories', inplace=True)
