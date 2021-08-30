@@ -39,7 +39,7 @@ Clone this Git Repository.
 
 ## Additional notebooks
 ### ETL Pipeline Preparation
-In the data folder you can find the ETL Pipeline Perparation Jupyter Notebook which is basically the foundation of the processing_data.py script.
+In the data folder you can find the ETL Pipeline Perparation Jupyter Notebook which is basically the foundation of the process_data.py script.
 ### ML Pipeline Preparation
 In the models folder you can find the ML Pipeline Perparation Jupyter Notebook which is basically the foundation of the train_classifier.py script.
 This notebook can be used to improve your model by trying other Machine Learning algorithms or by tuning the models parameter with GridSearchCV.
