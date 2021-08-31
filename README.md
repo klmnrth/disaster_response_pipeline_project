@@ -15,14 +15,14 @@ The Project is splitted into the following parts:
 FILES                              EXPLANATION
 app
 | - template
-| |- master.html                   # main page of web app
-| |- go.html                       # classification result page of web app
+| |- master.html                   # Main page of web app
+| |- go.html                       # Classification result page of web app
 |- run.py                          # Flask file that runs app
 data
-|- disaster_categories.csv         # categories data to process
-|- disaster_messages.csv           # messages data to process
+|- disaster_categories.csv         # Categories data to process
+|- disaster_messages.csv           # Messages data to process
 |- process_data.py                 # Script which is processing the ETL pipeline
-|- InsertDatabaseName.db           # database file to save clean data to
+|- InsertDatabaseName.db           # Database file to save clean data to
 |- ETL Pipeline Preparation.ipynb  # Jupyter Notebook of the ETL pipeline
 models
 |- train_classifier.py             # Script which is processing the ML pipeline
