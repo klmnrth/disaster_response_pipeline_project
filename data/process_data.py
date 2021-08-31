@@ -78,7 +78,7 @@ def save_data(df, database_filename):
             Destination path for saving the database (.db)
     """
     engine = create_engine('sqlite:///'+database_filename)
-    df.to_sql('df_table', engine, index=False)
+    df.to_sql('df_table', engine, index=False, if_exists='replace')
 
 
 def main():
