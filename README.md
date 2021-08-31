@@ -11,22 +11,25 @@ The Project is splitted into the following parts:
 3. WebApp: The WebApp is able to take any message and categorize it in real-time using the trained classifier.
 
 ## Files in the repository
-### File structure and explanations
-
+```
+FILES                              EXPLANATION
 app
 | - template
-| |- master.html # main page of web app
-| |- go.html # classification result page of web app
-|- run.py # Flask file that runs app
+| |- master.html                   # main page of web app
+| |- go.html                       # classification result page of web app
+|- run.py                          # Flask file that runs app
 data
-|- disaster_categories.csv # data to process
-|- disaster_messages.csv # data to process
-|- process_data.py
-|- InsertDatabaseName.db # database to save clean data to
+|- disaster_categories.csv         # categories data to process
+|- disaster_messages.csv           # messages data to process
+|- process_data.py                 # Script which is processing the ETL pipeline
+|- InsertDatabaseName.db           # database file to save clean data to
+|- ETL Pipeline Preparation.ipynb  # Jupyter Notebook of the ETL pipeline
 models
-|- train_classifier.py
-|- classifier.pkl # saved model
+|- train_classifier.py             # Script which is processing the ML pipeline
+|- classifier.pkl                  # Saved model
+|- ML Pipeline Preparation.ipynb   # Jupyter Notebook of the ML pipeline
 README.md
+```
 
 ## Getting Started
 ### Dependencies
@@ -39,20 +42,27 @@ README.md
 
 ### Installation
 Clone this Git Repository.
-
-`git clone https://github.com/klmnrth/disaster_response_pipeline_project`
+```
+git clone https://github.com/klmnrth/disaster_response_pipeline_project
+```
 
 ### Execute the program
 
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+        ```
+        python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+        ```
     - To run ML pipeline that trains classifier and saves
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+        ```
+        python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+        ```
 
 2. Run the following command in the app's directory to run your web app.
-    `python run.py`
+    ```
+    python run.py
+    ```
 
 3. Go to http://localhost:3001/
 
