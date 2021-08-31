@@ -63,6 +63,10 @@ def clean_data(df):
     # drop duplicates
     df.drop_duplicates(inplace=True)
 
+    # convert class to binary (drop value 2)
+    for i in df.index[df.related == 2]:
+        df.drop(index = i, inplace=True)
+
     return df
 
 
