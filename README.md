@@ -2,8 +2,7 @@
 
 ## Project Description
 During disasters there is a lot of communication (direct, news, social media..). At the same time the disaster response organizations have least capacity to filter out the messages which are the most important. 
-As part of the Data Science Nanodegree program by Udacity in collaboration with Figure Eight the aim of this project is to build a Natural Language Processing tool which is able to categorize messages in order to adress the relevant information to the according disaster response organization. The initial dataset provided by Figure Eight contains pre-labelled tweets and messages from real-life disasters.
-
+As part of the Data Science Nanodegree program by Udacity in collaboration with Figure Eight the aim of this project is to build a Natural Language Processing tool which is able to categorize messages in order to address the relevant information to the according disaster response organization. The initial dataset provided by Figure Eight contains pre-labelled tweets and messages from real-life disasters.
 
 The Project is splitted into the following parts:
 
