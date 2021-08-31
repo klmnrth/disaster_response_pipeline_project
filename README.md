@@ -1,13 +1,33 @@
 # Disaster Response Pipeline Project
 
 ## Project Description
-As part of the Data Science Nanodegree program by Udacity in collaboration with Figure Eight the aim of this project is to build a Natural Language Processing tool which is able to categorize messages. The initial dataset contains pre-labelled tweets and messages from real-life disasters. 
+During disasters there is a lot of communication (direct, news, social media..). At the same time the disaster response organizations have least capacity to filter out the messages which are the most important. 
+As part of the Data Science Nanodegree program by Udacity in collaboration with Figure Eight the aim of this project is to build a Natural Language Processing tool which is able to categorize messages in order to adress the relevant information to the according disaster response organization. The initial dataset provided by Figure Eight contains pre-labelled tweets and messages from real-life disasters.
+
 
 The Project is splitted into the following parts:
 
 1. Data Processing: The ETL pipeline extracts the data from two csv-files, cleans the data and saves it as a database file.
-2. Machine Learning: The Machine Learning pipeline trains and evaluates the model based on the data from the dataset and saves the      classifier afterwards.
+2. Machine Learning: The Machine Learning pipeline trains and evaluates the model based on the data from the dataset and saves the classifier afterwards.
 3. WebApp: The WebApp is able to take any message and categorize it in real-time using the trained classifier.
+
+## Files in the repository
+### File structure and explanations
+
+app
+| - template
+| |- master.html # main page of web app
+| |- go.html # classification result page of web app
+|- run.py # Flask file that runs app
+data
+|- disaster_categories.csv # data to process
+|- disaster_messages.csv # data to process
+|- process_data.py
+|- InsertDatabaseName.db # database to save clean data to
+models
+|- train_classifier.py
+|- classifier.pkl # saved model
+README.md
 
 ## Getting Started
 ### Dependencies
