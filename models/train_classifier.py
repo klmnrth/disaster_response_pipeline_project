@@ -90,12 +90,22 @@ def build_model():
     Output: ML model
     """
 
-    # build pipeline
-    model = Pipeline([
+    # build pipeline with GridSearchCV
+    pipeline = Pipeline([
     ('vect', CountVectorizer(tokenizer=tokenize)),
     ('tfidf', TfidfTransformer()),
     ('clf', MultiOutputClassifier(RandomForestClassifier()))
     ])
+
+    parameters = {
+        #'tfidf__norm': ['l1', 'l2'],
+        'tfidf__sublinear_tf': [True, False],
+        'clf__estimator__n_estimators': [10, 100],
+        'clf__estimator__criterion': ['gini', 'entropy']
+        #'clf__estimator__max_features': ['auto', 'log2']
+    }
+
+    model = GridSearchCV(pipeline, param_grid=parameters)
 
     return model
 
